@@ -3,7 +3,7 @@ import MovieList from './comp/MovieList';
 import Add from './comp/Add';
 import Serch from './comp/Serch';
 import './App.css';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Descrip from './comp/Descrip';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -30,7 +30,7 @@ function App() {
         <Add handleAjout={handleAjout} />
         <Serch handleSerch={handleSerch} Xserch={Xserch} />
         </div>
-        <Switch>
+        <Routes>
           <Route exact path='/' render={(props) =>
             <MovieList movies={moviesFin.filter(el =>
               el.title.toLowerCase().includes(Xserch.serchTit.toLowerCase()) && (el.rate >= Xserch.serchRat))} />
@@ -39,7 +39,7 @@ function App() {
           <Route exact path="/descrip/:title" render={(props) =>  <Descrip movies={moviesFin} {...props} /> } />
 
 
-        </Switch>
+        <vRoutes>
       </div>
     </div>
   );
